@@ -26,9 +26,9 @@ function updateCartCount() {
 
 // Displaying the products when the Page loads
 function displayProducts() {
-    const productContainer = document.getElementById("productContainer");
+    const productContainer = document.getElementById("productCardContainer");
 
-    products.forEach(product => {
+    ActualProducts.forEach(product => {
         const productCard = document.createElement("div");
         productCard.classList.add("card");
 
@@ -45,6 +45,9 @@ function displayProducts() {
         const ProductPrice = document.createElement("p");
         ProductPrice.textContent = `$${product.price}`;
 
+        // const BtnContainer = document.createElement("div");
+        // BtnContainer.classList.add("BtnContainer")
+
         const ViewDetailsBtn = document.createElement("button");
         ViewDetailsBtn.textContent = "View Details";
         ViewDetailsBtn.classList.add("viewDetailsBtn");
@@ -53,6 +56,7 @@ function displayProducts() {
         const AddToCartBtn = document.createElement("button");
         AddToCartBtn.textContent = "Add to Cart";
         AddToCartBtn.classList.add("addToCartBtn");
+        AddToCartBtn.classList.add("addToCart");
         AddToCartBtn.setAttribute("id", `AddProduct${product.id}`);
 
         productCard.appendChild(ProductImage);
@@ -60,7 +64,8 @@ function displayProducts() {
         productCard.appendChild(ProductDescription);
         productCard.appendChild(ProductPrice);
         productCard.appendChild(ViewDetailsBtn);
-        productCard.appendChild(AddToCartBtn);
+        productCard.appendChild(AddToCartBtn)
+        // productCard.appendChild(BtnContainer);
 
         productContainer.appendChild(productCard);
     });
@@ -68,12 +73,14 @@ function displayProducts() {
 
 // Function to attach event listeners
 function attachEventListenersForViewDetails() {
-    products.forEach(product => {
+    ActualProducts.forEach(product => {
         const ViewProductId = `ViewProduct${product.id}`;
         const ViewProductBtn = document.getElementById(ViewProductId);
 
+        // Checking if the button is there or not
         if (ViewProductBtn) {
             ViewProductBtn.addEventListener("click", () => {
+                // Calling the viewDetailsSection and viewDetailsContainer
                 const viewDetailsSection = document.getElementById("viewDetailsSection");
                 const viewDetailsContainer = document.getElementById("viewDetailsContainer");
 
@@ -93,6 +100,8 @@ function attachEventListenersForViewDetails() {
     });
 }
 
+
+
 // Functionality for close button
 document.addEventListener("click", (event) => {
     if (event.target && event.target.id === "closeBtn") {
@@ -103,7 +112,7 @@ document.addEventListener("click", (event) => {
 
 // Functionality for Add to Cart button
 function addToCartEventListeners() {
-    products.forEach(product => {
+    ActualProducts.forEach(product => {
         const AddProductId = `AddProduct${product.id}`;
         const AddProductBtn = document.getElementById(AddProductId);
 
@@ -129,8 +138,10 @@ function addToCartEventListeners() {
                     // Displaying message
                     console.log(`Added ${product.name} to cart`);
                     // alert(`Added ${product.name} to cart`);
-                    // Displaying Toast Notification
-                    showToast();
+
+                    // Showing toast
+                    showToast(); 
+
                 }
             });
         }
@@ -153,11 +164,12 @@ function showToast() {
 function handleSearch() {
     const searchInput = document.getElementById("search_bar");
     const searchBtn = document.getElementById("search_btn");
-    const productContainer = document.getElementById("productContainer");
+    const productContainer = document.getElementById("productCardContainer");
 
-    searchBtn.addEventListener("click", () => {
+    searchInput.addEventListener("keyup", () => {
         const searchTerm = searchInput.value.toLowerCase();
-        const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm) || product.description.toLowerCase().includes(searchTerm));
+        const filteredProducts = ActualProducts.filter(product => product.name.toLowerCase().includes(searchTerm));
+        
         productContainer.innerHTML = "";
         
         // checking if filteredProducts is empty
@@ -194,6 +206,12 @@ function handleSearch() {
 }
 
 
+// Adding eventlistener to cart icon
+document.getElementById("cart_icon").addEventListener("click", () => {
+    window.location.href = "cart.html";
+});
+
+
 // Page load logic
 async function waitingForBrowser() {
     await new Promise(resolve => {
@@ -209,10 +227,54 @@ waitingForBrowser().then(() => {
     addToCartEventListeners();
     // updateCartCount(); // Update cart count display when page loads
     handleSearch();
+    handleCategory();
 });
 
+// Functionalities for categories
+function handleCategory(){
+    const categories = document.getElementById("category").value;
+    const productContainer = document.getElementById("productCardContainer");
+
+    productContainer.innerHTML = "";
+
+    // Filtering for selected category
+    const filteredProducts = ActualProducts.filter(product => categories === "All" || product.category === categories);
+    
+    // Displaying filtered products
+    filteredProducts.forEach(product => {
+        productContainer.innerHTML += `
+            <div class="card">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="cart_item_details">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                        </div>
+                        <div>
+                            <button class="viewDetailsBtn" id="ViewProduct${product.id}">View Details</button>
+                            <button class="addToCartBtn" id="AddProduct${product.id}">Add to Cart</button>                            
+                        </div>
+                    </div>
+        `;
+
+    });
+
+    attachEventListenersForViewDetails();
+    // Functionality for close button
+    document.addEventListener("click", (event) => {
+        if (event.target && event.target.id === "closeBtn") {
+            const viewDetailsSection = document.getElementById("viewDetailsSection");
+            viewDetailsSection.style.display = "none";
+        }
+    });
+    
+}
+
+// Adding event listener to category dropdown
+document.getElementById("category").addEventListener("change", handleCategory);
+
 // Importing Products from product.js
-import { products } from './product.js';
+import { ActualProducts } from './product.js';
 
 // Exporting customerProducts
 export { customerProducts };

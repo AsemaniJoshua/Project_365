@@ -1,4 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+.FAQ_Section{
+    margin-top: 70px;
+    padding: 40px 80px;
+    background-color: rgba(226, 226, 226, 0.356);
+
+    h2{
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+    } 
+
+
+    .details-group-example{
+
+        sl-details:not(:last-of-type) {
+            margin-bottom: var(--sl-spacing-2x-small);
+        }
+
+        sl-details{
+            padding: 10px;
+        }
+
+        /* styling the summary of the sl-details without styling the details of the summary */
+        sl-details[summary]{
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Styling only the details part of the sl-details and not the summary part */
+        sl-details[open]{
+            font-size: 18px;
+            padding: 10px;
+            background-color: #ff00c863;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        
+    }
+
+}
 
 
 

@@ -6,6 +6,7 @@
   <title>E - Commerce</title>
 
   <!-- Css Link -->
+  <link rel="stylesheet" href="styles/cart_style.css">
   <link rel="stylesheet" href="styles/HomePageStyles/Header.css">
   <link rel="stylesheet" href="styles/HomePageStyles/HeroSection.css">
   <link rel="stylesheet" href="styles/HomePageStyles/Product_section.css">
@@ -23,29 +24,31 @@
 
   <!-- Header Section with Navbar -->
   <header>
-    <h1>Logo.</h1>
+    <h1 role="link" aria-label="Logo">Logo.</h1>
 
-    <nav>
+    <nav role="menubar" aria-label="Navbar">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="Products.html">Products</a></li>
-        <li><a href="Contact.html">Contact</a></li>
+        <li role="menuitem" aria-label="Home"><a href="#">Home</a></li>
+        <li role="menuitem" aria-label="About"><a href="About.html">About</a></li>
+        <li role="menuitem" aria-label="Products"><a href="Products.html">Products</a></li>
+        <li role="menuitem" aria-label="Contact"><a href="Contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <div class="Header_Division3">
+    <div class="Header_Division3" role="heading" aria-label="Search bar and cart icon">
       <!-- Search Bar -->
       <div class="Search_Bar">
-        <input type="search" placeholder="Search for items">
-        <button>Search</button>
+        <input type="search" id="search_bar" placeholder="Search for items" aria-label="Search bar">
+        <button id="search_btn" role="button" aria-label="Search Button">Search</button>
       </div>
 
       <!-- Cart Icon -->
       <div class="Cart_Icon">
-        <sl-icon name="cart4"></sl-icon>
+        <sl-icon name="cart4" id="cart_icon" class="cart_icon active" role="icon-link" aria-label="Cart Icon"></sl-icon>
       </div>
     </div>
+
+    
 
   </header>
 
@@ -56,9 +59,9 @@
 
     <!-- Hero Content -->
     <div class="Hero_Content">
-      <h1>Shop with us</h1>
-      <p>Get the best deals on our products</p>
-      <a href="#"><button>Shop Now</button></a>
+      <h1 role="heading" aria-label="Shop with Us">Shop with us</h1>
+      <p role="text" aria-label="Get the best deals on our products">Get the best deals on our products</p>
+      <a href="Products.html" role="link" aria-label="Shop now button"><button>Shop Now</button></a>
     </div>
 
     <!-- Hero Image -->
@@ -123,13 +126,21 @@
     <a id="viewAllProducts" href="Products.html"><button>View all Products</button></a>
    </div>
 
-   <!-- View Details Container -->
-   <div id="viewDetailsContainer">
-      
-   </div>
-
 
 </section>
+
+
+
+  <!-- View Details Container -->
+  <section id="viewDetailsSection">
+    <div id="viewDetailsContainer">
+      
+    </div>
+  </section>
+
+
+  <!-- Toast notification HTML --> 
+  <div id="toast" class="toast">Item added to cart</div>
 
 
 <!-- Testimonial Section -->
@@ -240,5 +251,6 @@
   <!-- JavaScript -->
   <script src="js/ui.js"></script>
   <script type="module" src="./js/display_home_products.js"></script>
+  <script src="./js/cart_counter.js"></script>
 </body>
 </html>

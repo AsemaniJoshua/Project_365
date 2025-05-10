@@ -1,5 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 
+.Product_Section{
+    margin: 50px 0px 80px 0px;
+    padding: 40px;
+    background-color: rgba(226, 226, 226, 0.356);
+
+    h2{
+        font-size: 26px;
+        font-style: italic;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .search_by_category{
+        text-align: right;
+        margin-bottom: 20px;
+        font-size: 17px;
+        font-weight: 500;
+
+        select{
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+
+    }
+
+
+    #productContainer{
+        
+        #productCardContainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #viewAllProducts{
+            text-decoration: none;
+            margin-left: 85%;
+            display: block;
+            
+            button{
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 17px;
+                font-weight: 500;
+                background-color: #ff00c8e0;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 30px;
+                
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+
+        .card{
+            max-width: 280px;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 100;
+            box-shadow: 2px 3px 2px 0px;
+
+            &:hover{
+                box-shadow: 2px 3px 5px 0px;
+                transform: scale(1.02);
+            }
+
+            img{
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            h2{
+                font-size: 18px;
+                font-weight: 700;
+                margin-top: 10px;
+            }
+
+            p{
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            button{
+                padding: 10px 20px;
+                border: none;
+                width: 140px;
+                border-radius: 5px;
+                font-size: 17px;
+                font-weight: 500;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin: 15px 0px;
+                
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }
+
+            }
+
+            .viewDetailsBtn{
+                background-color: rgba(226, 226, 226, 0.904);
+                color: black;
+            }
+
+            .addToCartBtn{
+                background-color: #ff00c8e0;
+                color: white;
+            }
+
+            #To_product_page_link{
+                text-decoration: none;
+                text-align: center;
+                
+
+                .view_in_product_page{
+                    width: 200px;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 17px;
+                    font-weight: 500;
+                    background-color: #ff00c8e0;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    margin: 30px 0px 30px 0px;
+                    
+
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                    }
+
+
+                }
+
+
+            }
+        }
+
+        
+    }
+
+
+}
+
+
+#viewDetailsSection{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1003;
+    display: none;
+
+
+    #viewDetailsContainer{
+        background-color: white;
+        width: 600px;
+        height: auto;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    
+        img{
+            width: 80%;
+            height: 350px;
+        }
+
+        h2{
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        p{
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Styling for the View Details Container Buttons */
+        .BtnContainer{
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin: 30px 20px 30px 0px;
+
+            .closeBtn{
+                background-color: red;
+                color: white;
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }
+
+            }
+
+            .addToCart{
+                background-color: #ff00c8e0;
+                color: white;
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }
+
+
+            }
+        }
+
+        .BtnContainer button{
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+    }
+
+
+}
+
+/* Toast Notification style */
+.toast { 
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: -125px; 
+    background-color: white; 
+    color: black; 
+    text-align: center; 
+    border-radius: 5px; 
+    padding: 16px; 
+    border-top: 7px solid #ff00c8;
+    position: fixed; 
+    z-index: 1005; 
+    left: 50%; 
+    bottom: 30px; 
+    font-size: 17px; 
+} 
+
+.toast.show { 
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 3s; 
+    animation: fadein 0.5s, fadeout 0.5s 3s; 
+} 
+
+@-webkit-keyframes fadein { 
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;} 
+} 
+
+@keyframes fadein { 
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;} 
+} 
+
+@-webkit-keyframes fadeout { 
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;} 
+} 
+
+@keyframes fadeout { 
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;} 
+}
 
 
 
@@ -100,6 +400,36 @@
                     margin-top: 10px;
                 }
 
+                button{
+                    padding: 10px 20px;
+                    border: none;
+                    width: 140px;
+                    border-radius: 5px;
+                    font-size: 17px;
+                    font-weight: 500;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    margin: 15px 0px;
+                    
+
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                    }
+
+                }
+
+                .viewDetailsBtn{
+                    background-color: rgba(226, 226, 226, 0.904);
+                    color: black;
+                }
+
+                .addToCartBtn{
+                    background-color: #ff00c8e0;
+                    color: white;
+                }
+
                 #To_product_page_link{
                     text-decoration: none;
                     text-align: center;
@@ -133,6 +463,144 @@
 
             
         }
+
+
     }
+
+
+    #viewDetailsSection{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1003;
+        display: none;
+
+
+        #viewDetailsContainer{
+            background-color: white;
+            width: 600px;
+            height: auto;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        
+            img{
+                width: 80%;
+                height: 350px;
+            }
+
+            h2{
+                font-size: 18px;
+                font-weight: 700;
+                margin-top: 10px;
+            }
+
+            p{
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            /* Styling for the View Details Container Buttons */
+            .BtnContainer{
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+                margin: 30px 20px 30px 0px;
+
+                .closeBtn{
+                    background-color: red;
+                    color: white;
+
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                    }
+
+                }
+
+                .addToCart{
+                    background-color: #ff00c8e0;
+                    color: white;
+
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                    }
+
+
+                }
+            }
+
+            .BtnContainer button{
+                margin-left: 10px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 17px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+        }
+
+
+    }
+
+    /* Toast Notification style */
+    .toast { 
+        visibility: hidden; 
+        min-width: 250px; 
+        margin-left: -125px; 
+        background-color: white; 
+        color: black; 
+        text-align: center; 
+        border-radius: 5px; 
+        padding: 16px; 
+        border-top: 7px solid #ff00c8;
+        position: fixed; 
+        z-index: 1005; 
+        left: 50%; 
+        bottom: 30px; 
+        font-size: 17px; 
+    } 
+    
+    .toast.show { 
+        visibility: visible; 
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 3s; 
+        animation: fadein 0.5s, fadeout 0.5s 3s; 
+    } 
+    
+    @-webkit-keyframes fadein { 
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;} 
+    } 
+    
+    @keyframes fadein { 
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;} 
+    } 
+    
+    @-webkit-keyframes fadeout { 
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;} 
+    } 
+    
+    @keyframes fadeout { 
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;} 
+    }
+
+    
 }
 

@@ -6,6 +6,7 @@
     <title>E-Commerce | About</title>
 
     <!-- Css Link -->
+  <link rel="stylesheet" href="styles/cart_style.css">
   <link rel="stylesheet" href="styles/HomePageStyles/Header.css">
   <link rel="stylesheet" href="styles/HomePageStyles/Footer.css">
   <link rel="stylesheet" href="./styles/AboutPageStyles/About.css">
@@ -40,7 +41,7 @@
 
       <!-- Cart Icon -->
       <div class="Cart_Icon">
-        <sl-icon name="cart4"></sl-icon>
+        <sl-icon name="cart4" id="cart_icon" class="cart_icon active"></sl-icon>
       </div>
     </div>
 
@@ -105,5 +106,9 @@
     <div class="footer_bottom">
       <p>&copy; 2021 E-Commerce. All rights reserved.</p>
     </div>
+
+
+    <!-- Scripts -->
+    <script src="./js/cart_counter.js"></script>
 </body>
 </html>

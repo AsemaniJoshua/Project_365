@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+#main_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100vh;
+
+    #cart_container{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        gap: 20px;
+
+        .card{
+            max-width: 280px;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 100;
+            box-shadow: 2px 3px 2px 0px;
+
+            &:hover{
+                box-shadow: 2px 3px 5px 0px;
+                transform: scale(1.02);
+            }
+
+            img{
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            h3{
+                font-size: 18px;
+                font-weight: 700;
+                margin-top: 10px;
+            }
+
+            p{
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            button{
+                padding: 10px 20px;
+                border: none;
+                width: 140px;
+                border-radius: 5px;
+                font-size: 17px;
+                font-weight: 500;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin: 15px 0px;
+                
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }
+
+            }
+
+            
+        }
+
+
+    }
+
+    #checkout{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        position: sticky;
+        top: 80px;
+        border-left: 4px solid #ff00c8e0;
+        padding: 30px;
+        max-height: 90vh;
+        min-width: 35%;
+        border-radius: 10px;
+        background-color: rgba(226, 226, 226, 0.26);
+
+        h1{
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        #totalContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            h2{
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #333;
+            }
+
+            h3{
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: #333;
+            }
+
+            p{
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #333;
+            }
+
+            button{
+                padding: 10px 20px;
+                border: none;
+                background-color: #ff00c8e0;
+                color: #ffffff;
+                font-size: 1rem;
+                font-weight: 700;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                    border: 2px solid #ff00c8e0;
+                    font-weight: 700;
+                }
+
+
+            }
+
+
+        }
+
+
+    }
+
+
+} */
+
+/* Toast Notification style */
+.toast { 
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: -125px; 
+    background-color: white; 
+    color: black; 
+    text-align: center; 
+    border-radius: 5px; 
+    padding: 16px; 
+    border-top: 7px solid red;
+    position: fixed; 
+    z-index: 1005; 
+    left: 50%; 
+    bottom: 30px; 
+    font-size: 17px; 
+} 
+
+.toast.show { 
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 3s; 
+    animation: fadein 0.5s, fadeout 0.5s 3s; 
+} 
+
+@-webkit-keyframes fadein { 
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;} 
+} 
+
+@keyframes fadein { 
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;} 
+} 
+
+@-webkit-keyframes fadeout { 
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;} 
+} 
+
+@keyframes fadeout { 
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;} 
+}
+
+
+
+/* Styling for checkout form */
+
+/* #checkoutForm{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+
+    form{
+        background-color: rgba(226, 226, 226, 0.26);
+        max-width: 600px;
+        height: auto;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        #closeCheckoutForm{
+            margin: 20px 0px;
+            font-weight: bold;
+            font-size: 24px;
+            margin-left: 90%;
+            cursor: pointer;
+            text-align: right;
+            padding: 10px 20px;
+        }
+
+        h2{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label{
+            display: block;
+            margin: 10px 0px;
+        }
+
+        input{
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        button{
+            margin-top: 30px;
+        }
+
+
+    }
+} */
+
+
+
+@media (min-width: 1024px) {
+  
+    #main_section{
+        display: flex;
+        justify-content: center;
+
+        #cart_container{
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            gap: 20px;
+
+            .card{
+                max-width: 280px;
+                padding: 15px;
+                border-radius: 5px;
+                z-index: 100;
+                box-shadow: 2px 3px 2px 0px;
+
+                &:hover{
+                    box-shadow: 2px 3px 5px 0px;
+                    transform: scale(1.02);
+                }
+
+                img{
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+
+                h3{
+                    font-size: 18px;
+                    font-weight: 700;
+                    margin-top: 10px;
+                }
+
+                p{
+                    font-size: 16px;
+                    margin-top: 10px;
+                }
+
+                button{
+                    padding: 10px 20px;
+                    border: none;
+                    width: 140px;
+                    border-radius: 5px;
+                    font-size: 17px;
+                    font-weight: 500;
+                    background-color: red;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    margin: 15px 0px;
+                    
+
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                    }
+
+                }
+
+                
+            }
+
+
+        }
+
+        #checkout{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: sticky;
+            top: 80px;
+            border-left: 4px solid #ff00c8e0;
+            padding: 30px;
+            max-height: 90vh;
+            min-width: 35%;
+            border-radius: 10px;
+            background-color: rgba(226, 226, 226, 0.26);
+
+            h1{
+                font-size: 2rem;
+                font-weight: 700;
+                color: #333;
+            }
+
+            #totalContainer{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+
+                h2{
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: #333;
+                }
+
+                h3{
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    color: #333;
+                }
+
+                p{
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    color: #333;
+                }
+
+                button{
+                    padding: 10px 20px;
+                    border: none;
+                    background-color: #ff00c8e0;
+                    color: #ffffff;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                        border: 2px solid #ff00c8e0;
+                        font-weight: 700;
+                    }
+
+
+                }
+
+
+            }
+
+
+        }
+
+
+    }
+
+    /* Toast Notification style */
+    .toast { 
+        visibility: hidden; 
+        min-width: 250px; 
+        margin-left: -125px; 
+        background-color: white; 
+        color: black; 
+        text-align: center; 
+        border-radius: 5px; 
+        padding: 16px; 
+        border-top: 7px solid red;
+        position: fixed; 
+        z-index: 1005; 
+        left: 50%; 
+        bottom: 30px; 
+        font-size: 17px; 
+    } 
+    
+    .toast.show { 
+        visibility: visible; 
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 3s; 
+        animation: fadein 0.5s, fadeout 0.5s 3s; 
+    } 
+    
+    @-webkit-keyframes fadein { 
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;} 
+    } 
+    
+    @keyframes fadein { 
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;} 
+    } 
+    
+    @-webkit-keyframes fadeout { 
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;} 
+    } 
+    
+    @keyframes fadeout { 
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;} 
+    }
+
+
+
+    /* Styling for checkout form */
+
+    /* #checkoutForm{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+
+        form{
+            background-color: rgba(226, 226, 226, 0.26);
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            #closeCheckoutForm{
+                margin: 20px 0px;
+                font-weight: bold;
+                font-size: 24px;
+                margin-left: 90%;
+                cursor: pointer;
+                text-align: right;
+                padding: 10px 20px;
+            }
+
+            h2{
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            label{
+                display: block;
+                margin: 10px 0px;
+            }
+
+            input{
+                width: 100%;
+                padding: 8px 10px;
+                border-radius: 10px;
+            }
+
+            button{
+                margin-top: 30px;
+            }
+
+
+        }
+    } */
+
+
+
+}

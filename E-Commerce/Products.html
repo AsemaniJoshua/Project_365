@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce | Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E - Commerce | Products</title>
 
-    <!-- Css Link -->
-    <link rel="stylesheet" href="styles/cart_style.css">
+  <!-- Css Link -->
+  <link rel="stylesheet" href="styles/cart_style.css">
   <link rel="stylesheet" href="styles/HomePageStyles/Header.css">
+  <link rel="stylesheet" href="styles/HomePageStyles/Product_section.css">
   <link rel="stylesheet" href="styles/HomePageStyles/Footer.css">
-  <link rel="stylesheet" href="./styles/ContactPageStyles/Contact.css">
 
 
   <!-- Shoelace CDN style and script -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/themes/light.css" />
   <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/shoelace.js" ></script>
 
-
 </head>
 <body>
 
-    <!-- Header Section with Navbar -->
+
+
+     <!-- Header Section with Navbar -->
   <header>
     <h1>Logo.</h1>
 
@@ -28,16 +29,16 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="About.html">About</a></li>
-        <li><a href="Products.html">Products</a></li>        
+        <li><a href="Contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <div class="Header_Division3">
       <!-- Search Bar -->
-      <!-- <div class="Search_Bar">
-        <input type="search" placeholder="Search for items">
-        <button>Search</button>
-      </div> -->
+      <div class="Search_Bar">
+        <input type="search" id="search_bar" placeholder="Search for items">
+        <button id="search_btn">Search</button>
+      </div>
 
       <!-- Cart Icon -->
       <div class="Cart_Icon">
@@ -48,37 +49,54 @@
   </header>
 
 
-    <!-- Contact Hero -->
-    <section class="Contact_Hero">
-        <h1>Contact Us</h1>
 
-        <p>Get in touch with us by Subscribing to our newsletter</p>
 
-        <form action="" method="post">
-            <input type="email" name="email" id="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-        </form>
-    </section>
+  <!-- Product Section -->
 
-    <!-- Contact Section -->
-    <section class="Contact_Section">
-
-      <div class="form_div">
-        <form action="" method="post">
-
-          <h2>Submit a message</h2>
+<section class="Product_Section" id="Product_Section_for_Product_Page">
   
-          <sl-input class="label-on-left" label="Name" required help-text="Enter your name"></sl-input>
-          <sl-input class="label-on-left" label="Email" required type="email" help-text="Enter your email"></sl-input>
-          <sl-textarea class="label-on-left" label="Message" required help-text="Tell us something about yourself"></sl-textarea>
-
-          <button type="submit">Submit</button>
+    <h2>Browse through our products</h2>
   
-        </form>
+    <div class="search_by_category">
+      <label for="category">Search by Category:</label>
+      <select name="category" id="category">
+        <option value="All">All</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Footwear">Footwear</option>
+        <option value="Accessories">Accessories</option>
+      </select>
+    </div>
+  
+    <!-- Displaying product through JavaScript Array of Object -->
+     <div id="productContainer">
+  
+      <div id="productCardContainer">
+        
       </div>
-    </section>
+    
+     </div>
+  
+  
+  </section>
 
-    <!-- Footer Section -->
+
+
+  <!-- View Details Container -->
+  <section id="viewDetailsSection">
+    <div id="viewDetailsContainer">
+      
+    </div>
+  </section>
+
+
+  <!-- Toast notification HTML --> 
+  <div id="toast" class="toast">Item added to cart</div>
+
+
+
+  
+  <!-- Footer Section -->
 <section class="footer">
     <footer>
       <div class="footer_content">
@@ -91,10 +109,10 @@
         <div class="footer_content2">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="About.html">About</a></li>
             <li><a href="Products.html">Products</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="Contact.html">Contact</a></li>
           </ul>
         </div>
   
@@ -127,8 +145,8 @@
     </div>
 
 
-    <!-- Scripts -->
-
+    <!-- Scripts -->  
     <script src="./js/cart_counter.js"></script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>

@@ -1,4 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+@media (max-width: 1023px){
+
+    .footer_content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.footer{
+    padding: 40px;
+    background-color: #ff00c8e0;
+    color: white;
+    margin-top: 50px;
+
+    .footer_content{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: space-between;
+        padding: 60px;
+
+        .footer_content1{
+
+            h3{
+                color: white;
+                font-size: 85px;
+                font-weight: 700;
+                margin-bottom: 20px;
+                font-style: italic;
+            }
+
+            p{
+                font-style: italic;
+            }
+
+
+        }
+
+
+        .footer_content2{
+
+            h3{
+                color: white;
+                font-size: 36px;
+                font-weight: 700;
+                margin: 80px 0px 20px 0px;
+                font-style: oblique;
+            }
+
+            ul{
+                list-style: none;
+                padding: 0;
+
+                li{
+                    margin-bottom: 10px;
+                    font-style: italic;
+
+                    a{
+                        text-decoration: none;
+                        color: white;
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+
+            }
+
+
+        }
+
+        .footer_content3{
+
+            h3{
+                color: white;
+                font-size: 35px;
+                font-weight: 700;
+                margin: 85px 0px 20px 0px;
+                font-style: oblique;
+            }
+
+            p{
+                margin-bottom: 20px;
+                font-style: italic;
+                font-weight: 200;
+            }
+
+
+        }
+
+        .footer_content4{
+            margin-bottom: 80px;
+
+            h3{
+                color: white;
+                font-size: 35px;
+                font-weight: 700;
+                margin: 85px 0px 20px 0px;
+                font-style: oblique;
+            }
+
+
+            ul{
+                list-style: none;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+
+                li{
+                    margin-bottom: 10px;
+                    font-style: italic;
+
+                    a{
+                        text-decoration: none;
+                        color: white;
+
+                        &:hover{
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+
+    }
+
+
+}
+
+.footer_bottom{
+    padding: 20px;
+    text-align: center;
+}
 
 
 @media (min-width: 1024px){
